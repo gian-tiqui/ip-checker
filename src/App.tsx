@@ -47,7 +47,7 @@ const App = () => {
   };
 
   return (
-    <div className="h-screen p-5 bg-neutral-200">
+    <div className="p-5 bg-neutral-200">
       <form
         className="flex flex-col gap-4 mb-4"
         onSubmit={handleSubmit(onSubmit)}

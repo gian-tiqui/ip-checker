@@ -8,7 +8,7 @@ interface Props {
 const IpItem: React.FC<Props> = ({ ip }) => {
   const [_ip, set_Ip] = useState<IP | undefined>(undefined);
   const [loading, setLoading] = useState<boolean>(true);
-  const [intervalDelay, setIntervalDelay] = useState<number>(10000);
+  const [intervalDelay, setIntervalDelay] = useState<number>(20000);
 
   useEffect(() => {
     const fetchIpStatus = () => {
@@ -26,17 +26,17 @@ const IpItem: React.FC<Props> = ({ ip }) => {
         .finally(() => setLoading(false));
     };
 
-    fetchIpStatus(); // initial fetch
+    fetchIpStatus();
 
     const intervalId = setInterval(fetchIpStatus, intervalDelay);
 
     return () => clearInterval(intervalId);
-  }, [ip, intervalDelay]); // add intervalDelay to dependencies
+  }, [ip, intervalDelay]);
 
   return (
     <div className="flex items-center justify-between w-full h-20 gap-3 px-3 bg-white rounded-lg shadow">
       {loading ? (
-        <p>Loading...</p>
+        <p>Checking status...</p>
       ) : (
         <>
           <p>{_ip?.ip}</p>
