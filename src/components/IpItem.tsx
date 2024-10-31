@@ -35,16 +35,16 @@ const IpItem: React.FC<Props> = ({ ip }) => {
 
   return (
     <div className="flex items-center justify-between w-full h-20 gap-3 px-3 bg-white rounded-lg shadow">
-      {loading ? (
-        <p>Checking status...</p>
-      ) : (
-        <>
-          <p>{_ip?.ip}</p>
+      <>
+        <p>{_ip?.ip}</p>
+        <div>{loading && "o"}</div>
+        <div className="flex items-center justify-center w-32 gap-1">
           <div
             className={`${_ip?.alive ? "bg-green-500" : "bg-red-700"} h-4 w-4`}
           ></div>
-        </>
-      )}
+          {_ip?.alive ? "hi" : "ded"}
+        </div>
+      </>
     </div>
   );
 };
