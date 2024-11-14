@@ -36,7 +36,7 @@ const App = () => {
       return;
     }
 
-    if (limit >= 200) {
+    if (limit >= 253) {
       alert("Limit should be less than 200");
       return;
     }

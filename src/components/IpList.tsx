@@ -8,7 +8,7 @@ interface Props {
 
 const IpList: React.FC<Props> = ({ ips }) => {
   return (
-    <div className="flex flex-col w-full gap-2 h-[1000px] overflow-auto">
+    <div className="flex flex-wrap items-start gap-2 overflow-auto">
       {ips && ips.map((ip, index) => <IpItem ip={ip} key={index} />)}
     </div>
   );
